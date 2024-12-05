@@ -89,6 +89,7 @@ class Game:
     description = "You enter the tunnel and hear a loud roar. There is a large green troll at the other end of the tunnel, and it definitely heard you coming. The Troll holds a club in one hand, which would definitely hurt to get hit by. The Troll is large, but slow. Quick attacks would best the monster."
 
     def attack():
+        score = 0
         player_health = 20
         monster_health = 30
         monster_name = "Troll"
@@ -116,6 +117,7 @@ class Game:
             main_cavern()
         if monster_health <= 0:
             print(f"The {monster_name} has died.")
+            score = score +100
 
     def defend():
         monster_name = "Troll"
@@ -165,13 +167,15 @@ class Game:
             if choice == "1":
                 print("You are PLAYING THE GAME.")
                 # Call 'Play Game' function here
-
+                Game()
             elif choice == "4":
                 print("You are READING THE INSTRUCTIONS.")
                 # Call 'Instructions' function here
+                intructions()
             elif choice == "5":
                 print("You are LOADING THE SCORE.")
                 # Call 'Game Settings' function here
+                print(score)
             elif choice == "6":
                 print("You are ENDING THE GAME.")
                 break
