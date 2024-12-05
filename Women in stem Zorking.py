@@ -83,6 +83,73 @@ class Game:
         else:
             print(f"You don't have that item dummy")
 
+    def f_one_ne_monster():
+    monster_name = "Troll"
+    monster_health = 30
+    player_health = 20
+    print(
+        "You enter the tunnel and hear a loud roar. There is a large green troll at the other end of the tunnel, and it definitely heard you coming.")
+    print("The Troll holds a club in one hand, which would definitely hurt to get hit by.")
+    print("The Troll is large, but slow. Quick attacks would best the monster.")
+
+    def attack():
+        player_health = 20
+        monster_health = 30
+        monster_name = "Troll"
+        while player_health > 0 and monster_health > 0:
+            turn = 1
+            if turn == 1:
+                weapon = input("What would you like to attack with?: ")
+                print(f"You attack the {monster_name} with your {weapon}")
+                if weapon == 'sword' or 'bow':
+                    damage = 10
+                    monster_health -= damage
+                    turn = 2
+                elif weapon == 'knife':
+                    damage = 20
+                    monster_health -= damage
+                    turn = 2
+            elif turn == 2:
+                damage2 = random.randint(1, 5)
+                player_health -= damage2
+                print(f"The {monster_name} attacks you.")
+                print(f"You take {damage2} damage. You have {player_health} health left.\n")
+
+        if player_health <= 0:
+            print(f"You have been defeated by the {monster_name}.")
+            main_cavern()
+        if monster_health <= 0:
+            print(f"The {monster_name} has died.")
+
+    def defend():
+        monster_name = "Troll"
+        player_health = 20
+        if random.randint(1, 2) == 1:
+            print(f"You avoid the trolls attack. Your health remains at {player_health}.")
+        else:
+            damage = random.randint(1, 5)
+            player_health -= damage
+            print(f"The {monster_name} attacks you.")
+            print(f"You take {damage} damage. You have {player_health} health left.\n")
+
+    def flee():
+        print("You flee back into the large cavern.")
+        main_cavern()
+
+    while monster_health > 0 and player_health > 0:
+        print(f"The {monster_name} has {monster_health} health.")
+        print(f"You have {player_health} health.")
+        action = input("What would you like to do? (attack, defend, flee)")
+        if action == 'attack':
+            attack()
+        elif action == 'defend':
+            defend()
+        elif action == 'flee':
+            flee()
+        else:
+            input("Please choose to attack, defend, or flee.")
+
+
     def main_menu(self):
         while True:
             print("\nGame Start Menu")
