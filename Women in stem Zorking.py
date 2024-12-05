@@ -82,14 +82,11 @@ class Game:
         else:
             print(f"You don't have that item dummy")
 
-    def f_one_ne_monster():
+    def monster():
     monster_name = "Troll"
     monster_health = 30
     player_health = 20
-    print(
-        "You enter the tunnel and hear a loud roar. There is a large green troll at the other end of the tunnel, and it definitely heard you coming.")
-    print("The Troll holds a club in one hand, which would definitely hurt to get hit by.")
-    print("The Troll is large, but slow. Quick attacks would best the monster.")
+    description = "You enter the tunnel and hear a loud roar. There is a large green troll at the other end of the tunnel, and it definitely heard you coming. The Troll holds a club in one hand, which would definitely hurt to get hit by. The Troll is large, but slow. Quick attacks would best the monster."
 
     def attack():
         player_health = 20
