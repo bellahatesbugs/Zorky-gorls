@@ -43,9 +43,9 @@ class Game:
 
         # Link rooms
         self.rooms = {
-            "": self.start_room,
-            "": self.hallway,
-            "": self.treasure_room
+            "Main Cavern": self.start_room,
+            "Northwest Tunnel": self.NorthwestTunnel,
+            "Northeast Tunnel": self.NortheastTunnel
         }
 
         # Current state
