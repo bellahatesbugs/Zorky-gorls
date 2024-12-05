@@ -145,7 +145,12 @@ class Game:
         else:
             input("Please choose to attack, defend, or flee.")
 
-
+   def instructions():
+        print("\n----Instructions\n")
+        print("In this game, you are exploring a cave and trying to defeat a monster to escape.")
+        print("There are helpful items scattered throughout the cave.")
+        print("Good luck adventurer!")
+       
     def main_menu(self):
         while True:
             print("\nGame Start Menu")
