@@ -24,22 +24,21 @@ class Game:
     def __init__(self):
         # Define rooms
         self.start_room = Room(
-            name="",
-            description="",
-            items=[""],
-            exits={""}
+            name="Main Cavern",
+            description="You are in a large, circular cavern. There are three tunnels to the northwest, northeast, and south. It is dark. There is a rusted metal chest against the wall. There are tunnels branching off on the North West, North East, and South sides.",
+            items=["Flashlight", "Batteries"],
+            exits={"Northwest Tunnel", "Northeast Tunnel"}
         )
-        self.hallway = Room(
-            name="",
-            description="",
-            items=[""],
-            exits={""}
+        self.NorthwestTunnel = Room(
+            name="Northwest Tunnel",
+            description="At the end of the tunnel, laying on the ground, is a glittering sword of silver metal. It has dried blood on the tip. There is only one way out, the way you came.",
+            items=["Sword"],
+            exits={"Main Cavern"}
         )
-        self.treasure_room = Room(
-            name="",
-            description="",
-            items=[""],
-            exits={""}
+        self.NortheastTunnel = Room(
+            name="Northeast Tunnel",
+            description="You enter the tunnel and hear a loud roar. There is a large green troll at the other end of the tunnel, and it definitely heard you coming.",
+            exits={"Main Cavern"}
         )
 
         # Link rooms
